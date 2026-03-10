@@ -34,13 +34,14 @@ app.get('/', (req, res) => {
 app.post("/create", async (req, res) => {
     try {
         const create = await db.query(
-            `INSERT INTO test (${column}) VALUES (${value})`
+            `INSERT INTO test (${column}) VALUES (${Number})`
         )
         // const test = (await db.query(`INSERT INTO posts (title, content) VALUES ('cats',"they're the best")`))
-        res.send('I have created a new number for your table')
+        // res.send('I have created a new number for your table')
+        res.json()
         console.log('I have created a new number for your table')
     } catch {
-        res.send('there was a problem inserting into posts')
+        // res.send('there was a problem inserting into posts')
     }
 });
 
